@@ -7,7 +7,7 @@ trigger:
 - fix/*
 
 pool:
-  vmImage: $(imageName)
+  vmImage: ubuntu-latest
 
 jobs:
   - job: Clone_job
