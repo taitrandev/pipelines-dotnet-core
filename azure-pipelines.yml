@@ -6,20 +6,29 @@
 trigger:
 - master
 
+strategy:
+  matrix:
+    linux:
+      imageName: 'ubuntu-latest'
+    mac:
+      imageName: 'macOS-latest'
+    windows:
+      imageName: 'windows-latest'
+
 pool:
-  vmImage: ubuntu-latest
+  vmImage: $(imageName)
 
 steps:
-- script: echo Building project
+- script: echo Building project $(imageName)
   displayName: 'step building project'
 
-- script: echo Testing project
+- script: echo Testing project $(imageName)
   displayName: 'step testing project'
 
-- script: echo Publishing project
+- script: echo Publishing project $(imageName)
   displayName: 'step publish project'
   
-- script: echo Deploying project
+- script: echo Deploying project $(imageName)
   displayName: 'step deploying project'
 
 - script: |
