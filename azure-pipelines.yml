@@ -10,16 +10,16 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: 'Building project'
+- script: echo Building project
   displayName: 'step building project'
 
-- script: 'Testing project'
+- script: echo Testing project
   displayName: 'step testing project'
 
-- script: 'Publishing project'
+- script: echo Publishing project
   displayName: 'step publish project'
   
-- script: 'Deploying project'
+- script: echo Deploying project
   displayName: 'step deploying project'
 
 - script: |
