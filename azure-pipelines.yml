@@ -10,25 +10,28 @@ strategy:
   matrix:
     linux:
       imageName: 'ubuntu-latest'
+      version: 'u1'
     mac:
       imageName: 'macOS-latest'
+      version: 'm1'
     windows:
       imageName: 'windows-latest'
+      version: 'w1'
 
 pool:
   vmImage: $(imageName)
 
 steps:
-- script: echo Building project $(imageName)
+- script: echo Building project $(imageName) - $(version)
   displayName: 'step building project'
 
-- script: echo Testing project $(imageName)
+- script: echo Testing project $(imageName) - $(version)
   displayName: 'step testing project'
 
-- script: echo Publishing project $(imageName)
+- script: echo Publishing project $(imageName) - $(version)
   displayName: 'step publish project'
   
-- script: echo Deploying project $(imageName)
+- script: echo Deploying project $(imageName) - $(version)
   displayName: 'step deploying project'
 
 - script: |
