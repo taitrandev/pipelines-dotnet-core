@@ -1,6 +1,6 @@
 [![Build Status](https://taitrandev.visualstudio.com/pipeline-dotnet-core/_apis/build/status%2Ftaitrandev.pipelines-dotnet-core?branchName=master)](https://taitrandev.visualstudio.com/pipeline-dotnet-core/_build/latest?definitionId=2&branchName=master)
 
-update fix branches
+update fix branches second times
 
 # Sample ASP.NET Core application for Azure Pipelines docs
 
