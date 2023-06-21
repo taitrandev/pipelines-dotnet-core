@@ -6,32 +6,18 @@
 trigger:
 - fix/*
 
-strategy:
-  matrix:
-    linux:
-      imageName: 'ubuntu-latest'
-    mac:
-      imageName: 'macOS-latest'
-    windows:
-      imageName: 'windows-latest'
-
 pool:
   vmImage: $(imageName)
 
-steps:
-- script: echo Building project $(imageName)
-  displayName: 'step building project'
+jobs:
+  - job: Clone_job
+    steps:
+    - script: echo Clone_job
+    displayName: 'clone incorrect repo'
 
-- script: echo Testing project $(imageName)
-  displayName: 'step testing project'
-
-- script: echo Publishing project $(imageName)
-  displayName: 'step publish project'
-  
-- script: echo Deploying project $(imageName)
-  displayName: 'step deploying project'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+  - job: Execute_job
+    dependsOn: Clone_job
+    condition: failed()
+    steps:
+    - script: echo Execute job
+    displayName: 'echo Execute job name'
