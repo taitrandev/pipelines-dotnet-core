@@ -10,8 +10,17 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- script: 'Building project'
+  displayName: 'step building project'
+
+- script: 'Testing project'
+  displayName: 'step testing project'
+
+- script: 'Publishing project'
+  displayName: 'step publish project'
+  
+- script: 'Deploying project'
+  displayName: 'step deploying project'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
